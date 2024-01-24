@@ -1,12 +1,3 @@
-# Questions
-
-- Are we going to write code or a class diagram is enough? 
-	- Code is required. 
--  Are we going to persist the data?
-	- Yes
-- How will user use the system? 
-	- Using GET and POST request. 
-
 
 # Sketch 
 ![UML Diagram](./UML_Diagram.png)
@@ -34,23 +25,6 @@
 
 
 
-## Requirements:  
-
-- BMS will have multiple cities. 
-- Cities will have multiple theatre. 
-- Theatre will have multiple audis. 
-- Audis will have multiple seats. 
-- Each Seat will have a type. 
-- Audis will have available features. 
-- Shows will have required features. 
-- Shows has start and end time. 
-- Multiple seats can be booked with a single ticket. 
-- Limit number of seat allowed to be booked with 1 ticket. 
-####  Behaviours 
-- Status [ Available,  Locked, Booked , Not available ] is a seat in a show. 
-- Price is related to seat type in the show. 
-
-
 | ENUMS | CLASSES |
 | --------| :----------|
 |Seat Type | Cities |
@@ -65,17 +39,6 @@
 | | SeatInShow | 
 | | SeatTypeInShow | 
 
-
-
-## Enums
-
-1. SeatType: Silver, Gold, Platinum
-2. Role: Admin, owner, user
-3. Features: 2D, 3D, DOLBY, 4D
-4. SeatStatus: available, under_maintainance, locked, booked
-5. TheatreStatus: open, closed
-6. Payment Mode: card, netbanking 
-7. Payment Status: failed, successful, in-process 
 
 
 ### Classes 
@@ -195,35 +158,6 @@
 12. UserRole: id, userId, roleId
 13. ShowFeature: id, showId, featureId
 
-
-### Annotation 
-
-#### Lombock 
-	- Getter  -> Add getter methods
-	- Setter -> Add the setter Methods
-
-#### Model 
--  Entity -> For creating table 
--  MappedSuperClass -> to make properties part of another table 
--  Id -> To treat it as primary key
--  GeneratedValue -> For auto increment 
-
-#### Relationship 
-- OneToMany (mappedBy="")
-- ManyToOne
-- OneToOne
-- ManyToMany
-
-#### Enums
-- Enumerated -> For enums
-- ElementCollection -> For list of enums 
-
-- Rather than creating dependency object and then injecting in the constructor we could use following annotations of springboot: 
-#### Dependency Injection 
-	- Controller
-	- Autowired
-	- Service
-	- Repository 
 
 
 ### Concurrency Problem 
